@@ -1,8 +1,8 @@
 # NBA Sentiment Pro
 
-**Real-time NBA player sentiment analysis powered by DistilBERT and Reddit**
+**Real time NBA player sentiment analysis powered by DistilBERT and Reddit**
 
-Search any active NBA player and get an instant sentiment score derived from hundreds of Reddit comments — weighted by upvotes, corrected for NBA slang, and tracked over time.
+Search any active NBA player and get an instant sentiment score collected from hundreds of Reddit comments weighted by upvotes, corrected for NBA slang, and tracked over time.
 
 ---
 
@@ -10,18 +10,15 @@ Search any active NBA player and get an instant sentiment score derived from hun
 
 ![NBA Sentiment Pro dashboard screenshot](docs/screenshot.png)
 
-*Screenshot coming soon — run the app locally and search any player.*
-
----
 
 ## What It Does
 
 - **Search any NBA player** by name and retrieve a sentiment score from 0 (very negative) to 100 (very positive)
 - **Pulls live Reddit data** from r/nba and r/NBA using the PRAW API client
 - **Runs DistilBERT inference** on each comment, with a VADER fallback when PyTorch is unavailable
-- **Corrects for NBA slang** — terms like "goat", "buckets", "cooked", and "washed" are handled by a custom adjustment layer
-- **Upvote-weighted scoring** gives community-endorsed comments more influence than throwaway posts
-- **Tracks sentiment over time** — every search is stored in SQLite and visualized as a historical trend line
+- **Corrects for NBA slang** terms like "goat", "buckets", "cooked", and "washed" are handled by a custom adjustment layer
+- **Upvote-weighted scoring** gives community endorsed comments more influence than throwaway posts
+- **Tracks sentiment over time** every search is stored in SQLite and visualized as a historical trend line
 
 ---
 
@@ -62,7 +59,7 @@ Full component breakdown: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 ## Accuracy Improvement
 
-Fine-tuning DistilBERT on basketball-domain text produces a substantial improvement over the general-purpose VADER baseline:
+Fine tuning DistilBERT on basketball domain text produces a substantial improvement over the general-purpose VADER baseline:
 
 | Model | Test Set | Accuracy | F1 (macro) | Notes |
 |---|---|---|---|---|
