@@ -1,7 +1,7 @@
 import os
 import csv
 
-from datasets import load_dataset, Dataset
+from datasets import load_dataset, Dataset, ClassLabel, Features, Value
 from transformers import AutoTokenizer
 
 LABEL_MAP = {0: "negative", 1: "neutral", 2: "positive"}
@@ -23,7 +23,11 @@ def _load_nba_csv() -> Dataset:
             if label_id is not None:
                 texts.append(row["text"].strip())
                 labels.append(label_id)
-    return Dataset.from_dict({"text": texts, "label": labels})
+    features = Features({
+        "text": Value("string"),
+        "label": ClassLabel(names=["negative", "neutral", "positive"]),
+    })
+    return Dataset.from_dict({"text": texts, "label": labels}, features=features)
 
 
 def _tokenize(dataset: Dataset, tokenizer) -> Dataset:
