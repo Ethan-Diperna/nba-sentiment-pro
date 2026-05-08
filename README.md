@@ -6,11 +6,6 @@ Search any active NBA player and get an instant sentiment score collected from h
 
 ---
 
-## Demo
-
-![NBA Sentiment Pro dashboard screenshot](<img width="1902" height="932" alt="image" src="https://github.com/user-attachments/assets/e3641b7b-5557-4870-a1fc-b4ce321006be" />)
-
-
 ## What It Does
 
 - **Search any NBA player** by name and retrieve a sentiment score from 0 (very negative) to 100 (very positive)
